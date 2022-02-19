@@ -104,6 +104,34 @@
           }
         }
       }
+    },
+    "/users/{user-id}/admin": {
+      "patch": {
+        "tags": ["Users"],
+        "summary": "Turns a user in admin with",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user-id",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
     }
   }
 }
