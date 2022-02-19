@@ -46,6 +46,34 @@
             "description": "User already exists"
           }
         }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get users",
+        "description": "Return all users",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "user_id",
+            "description": "Use user-id which is an admin",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
       }
     }
   }
