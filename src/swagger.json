@@ -13,31 +13,31 @@
       "post": {
         "tags": ["Users"],
         "summary": "Create user",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Required fields to create a user",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string",
-                  "example": "User Example",
-                  "required": true
-                },
-                "email": {
-                  "type": "string",
-                  "example": "user@example.com",
-                  "required": true
+        "requestBody": {
+          "required": true,
+          "description": "Required fields to create a user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "email": {
+                    "type": "string",
+                    "required": true
+                  }
                 }
+              },
+              "example": {
+                "name": "user sample",
+                "email": "user@example.com"
               }
             }
           }
-        ],
+        },
         "responses": {
           "201": {
             "description": "Created"
