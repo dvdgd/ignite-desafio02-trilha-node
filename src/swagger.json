@@ -50,8 +50,7 @@
       "get": {
         "tags": ["Users"],
         "summary": "Get users",
-        "description": "Return all users",
-        "produces": ["application/json"],
+        "description": "Return a list of all users",
         "consumes": ["application/json"],
         "parameters": [
           {
@@ -80,8 +79,6 @@
       "get": {
         "tags": ["Users"],
         "summary": "Gets the user info",
-        "description": "Return all users",
-        "produces": ["application/json"],
         "consumes": ["application/json"],
         "parameters": [
           {
@@ -109,7 +106,6 @@
       "patch": {
         "tags": ["Users"],
         "summary": "Turns a user in admin with",
-        "produces": ["application/json"],
         "consumes": ["application/json"],
         "parameters": [
           {
