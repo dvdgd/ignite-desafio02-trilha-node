@@ -1,0 +1,52 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User Control Documentation",
+    "description": "This API is an educational test which provides a user control",
+    "version": "1.0.0",
+    "contact": {
+      "email": "dvd.gd762@gmail.com"
+    }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create user",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Required fields to create a user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "User Example",
+                  "required": true
+                },
+                "email": {
+                  "type": "string",
+                  "example": "user@example.com",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "User already exists"
+          }
+        }
+      }
+    }
+  }
+}
